@@ -1,8 +1,12 @@
 
 ===================================================
-[2026-07-01 23:17:35] Testing Logger
+[2026-07-01 23:24:25] Testing Logger
 ===================================================
-[2026-07-01 23:17:35] [INFO] Checking Internet
-[2026-07-01 23:17:36] [SUCCESS] Internet Available
-[2026-07-01 23:17:37] [WARNING] Java Already Installed
-[2026-07-01 23:17:38] [ERROR] Dummy Error
+[2026-07-01 23:24:25] [INFO] Checking Internet
+[2026-07-01 23:24:26] [SUCCESS] Internet Available
+[2026-07-01 23:24:27] [WARNING] Java Already Installed
+[2026-07-01 23:24:28] [ERROR] Dummy Error
+[2026-07-01 23:25:12] [INFO] Checking Operating System...
+[2026-07-01 23:25:12] [SUCCESS] Detected: Linux Mint 22.1
+[2026-07-01 23:25:12] [INFO] Checking Internet Connection...
+[2026-07-01 23:25:12] [SUCCESS] Internet Connection Available
