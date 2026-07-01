@@ -1,5 +1,8 @@
 #!/bin/bash
-
+source lib/colors.sh
+source lib/logger.sh
+source lib/progress.sh
+source lib/common.sh
 # ======================================================
 # Hadoop Auto Installer v1.0
 # Author: Satyaprakash Gupta
@@ -27,21 +30,7 @@ NC='\033[0m'
 # Print Functions
 # ----------------------------
 
-info() {
-    echo -e "${BLUE}[INFO]${NC} $1"
-}
 
-success() {
-    echo -e "${GREEN}[SUCCESS]${NC} $1"
-}
-
-warning() {
-    echo -e "${YELLOW}[WARNING]${NC} $1"
-}
-
-error() {
-    echo -e "${RED}[ERROR]${NC} $1"
-}
 
 # ----------------------------
 # Detect Current User
@@ -81,45 +70,8 @@ info "Home : $HOME_DIR"
 info "Hadoop Version : $HADOOP_VERSION"
 
 echo ""
-# ======================================================
-# Check Internet Connection
-# ======================================================
 
-check_internet() {
 
-    info "Checking Internet Connection..."
-
-    if ping -c 1 google.com >/dev/null 2>&1
-    then
-        success "Internet Connection Available"
-    else
-        error "No Internet Connection."
-        exit 1
-    fi
-}
-
-# ======================================================
-# Check Operating System
-# ======================================================
-
-check_os() {
-
-    info "Checking Operating System..."
-
-    if [ -f /etc/os-release ]; then
-
-        . /etc/os-release
-
-        echo "Detected OS : $PRETTY_NAME"
-
-    else
-
-        error "Unsupported Linux Distribution"
-
-        exit 1
-
-    fi
-}
 
 # ======================================================
 # Install Java 11
