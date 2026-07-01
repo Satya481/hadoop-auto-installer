@@ -3,6 +3,7 @@ source lib/colors.sh
 source lib/logger.sh
 source lib/progress.sh
 source lib/common.sh
+source lib/java.sh
 # ======================================================
 # Hadoop Auto Installer v1.0
 # Author: Satyaprakash Gupta
@@ -71,34 +72,6 @@ info "Hadoop Version : $HADOOP_VERSION"
 
 echo ""
 
-
-
-# ======================================================
-# Install Java 11
-# ======================================================
-
-install_java() {
-
-    info "Checking Java..."
-
-    if java -version >/dev/null 2>&1; then
-
-        success "Java Already Installed"
-
-        java -version
-
-    else
-        info "Installing OpenJDK 11..."
-
-        sudo apt update
-
-        sudo apt install openjdk-11-jdk -y
-
-        success "Java Installed Successfully"
-
-    fi
-
-}
 
 # ======================================================
 # Install SSH

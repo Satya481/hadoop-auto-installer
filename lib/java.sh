@@ -13,9 +13,27 @@ check_java() {
 
 install_java() {
 
-    log_info "Installing Java..."
+    info "Checking Java..."
+
+    if java -version >/dev/null 2>&1; then
+
+        success "Java Already Installed"
+
+        java -version
+
+    else
+        info "Installing OpenJDK 11..."
+
+        sudo apt update
+
+        sudo apt install openjdk-11-jdk -y
+
+        success "Java Installed Successfully"
+
+    fi
 
 }
+
 
 detect_java() {
 
