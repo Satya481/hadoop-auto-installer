@@ -56,6 +56,10 @@ format_namenode() {
 
     info "Formatting NameNode..."
 
+    export JAVA_HOME=$JAVA_HOME_PATH
+    export HADOOP_HOME=$HOME_DIR/hadoop
+    export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
     if [ ! -d "$HOME_DIR/hadoopdata/hdfs/namenode/current" ]; then
 
         hdfs namenode -format -force
@@ -67,7 +71,6 @@ format_namenode() {
     fi
 
 }
-
 start_hadoop() {
 
     info "Checking Hadoop services..."
