@@ -92,6 +92,12 @@ extract_hadoop
 
 
 configure_bashrc
+
+export JAVA_HOME=$JAVA_HOME_PATH
+export HADOOP_HOME=$HOME/hadoop
+export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+
 configure_hadoop_env
 configure_core_site
 configure_hdfs_site
