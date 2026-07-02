@@ -93,7 +93,7 @@ configure_hadoop_env
 configure_core_site
 configure_hdfs_site
 configure_mapred_site
-
+configure_yarn_site
 
 configure_ssh
 format_namenode
