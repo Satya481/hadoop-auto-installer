@@ -1,4 +1,11 @@
 #!/bin/bash
+
+HADOOP_VERSION="3.4.1"
+HADOOP_HOME="$HOME_DIR/hadoop"
+JAVA_HOME_PATH="/usr/lib/jvm/java-11-openjdk-amd64"
+HADOOP_DATA="$HOME_DIR/hadoopdata"
+DOWNLOAD_URL="https://dlcdn.apache.org/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz"
+
 source lib/config.sh
 source lib/colors.sh
 source lib/logger.sh
@@ -45,20 +52,6 @@ CURRENT_USER=$(whoami)
 HOME_DIR=$HOME
 
 # ----------------------------
-# Hadoop Variables
-# ----------------------------
-
-HADOOP_VERSION="3.4.1"
-
-HADOOP_HOME="$HOME_DIR/hadoop"
-
-JAVA_HOME_PATH="/usr/lib/jvm/java-11-openjdk-amd64"
-
-HADOOP_DATA="$HOME_DIR/hadoopdata"
-
-DOWNLOAD_URL="https://dlcdn.apache.org/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz"
-
-# ----------------------------
 # Welcome
 # ----------------------------
 
@@ -67,8 +60,6 @@ clear
 echo "==========================================="
 echo "      Hadoop Auto Installer v1.0"
 echo "==========================================="
-
-echo ""
 
 info "User : $CURRENT_USER"
 info "Home : $HOME_DIR"
