@@ -90,6 +90,8 @@ install_ssh
 download_hadoop
 extract_hadoop
 
+
+configure_bashrc
 configure_hadoop_env
 configure_core_site
 configure_hdfs_site
