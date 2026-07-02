@@ -87,7 +87,8 @@ check_os
 install_java
 install_ssh
 
-
+download_hadoop
+extract_hadoop
 
 configure_hadoop_env
 configure_core_site
