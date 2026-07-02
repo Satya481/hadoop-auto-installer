@@ -75,6 +75,10 @@ start_hadoop() {
 
     info "Checking Hadoop services..."
 
+    export JAVA_HOME=$JAVA_HOME_PATH
+    export HADOOP_HOME=$HOME_DIR/hadoop
+    export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
     if jps | grep -q NameNode; then
         warning "HDFS is already running."
     else
@@ -92,8 +96,6 @@ start_hadoop() {
     success "Hadoop services checked."
 
 }
-
-
 verify_cluster() {
 
     info "Checking Hadoop Services..."
