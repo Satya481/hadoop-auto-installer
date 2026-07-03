@@ -217,15 +217,15 @@ http://localhost:8088
 
 ### Installer
 
-![Installer](screenshots/installer.png)
+![Installer](screenshots/install.png)
 
 ### HDFS Dashboard
 
-![HDFS](screenshots/hdfs.png)
+![HDFS](screenshots/hdfs-ui.png)
 
 ### YARN Dashboard
 
-![YARN](screenshots/yarn.png)
+![YARN](screenshots/yarn-ui.png)
 
 ### WordCount Result
 
