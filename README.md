@@ -106,7 +106,8 @@ cd hadoop-auto-installer
 Make the installer executable:
 
 ```bash
-chmod +x install_hadoop.sh
+chmod +x menu.sh
+./menu.sh
 ```
 
 Run the installer:
