@@ -18,6 +18,10 @@ log_info "Starting Hadoop Services..."
 start_hadoop
 
 echo
+echo "Waiting for Hadoop services to initialize..."
+sleep 8
+
+echo
 
 log_success "Hadoop Started Successfully"
 

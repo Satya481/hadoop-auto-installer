@@ -22,8 +22,9 @@ do
     echo " 7. Restore Hadoop"
     echo " 8. Uninstall Hadoop"
     echo " 9. Verify Hadoop"
-    echo "10. View Install Log"
-    echo "11. Exit"
+    echo "10. View Logs"
+    echo "11. About"
+    echo "12. Exit"
     echo
     echo "====================================================="
     read -p "Enter your choice [1-11]: " CHOICE
@@ -64,19 +65,30 @@ do
             ./uninstall_hadoop.sh
             ;;
 
-        9)
+                9)
             ./verify_hadoop.sh
             ;;
 
         10)
-            if [ -f logs/install.log ]; then
-                less logs/install.log
-            else
-                echo "Install log not found."
-            fi
+            ./view_logs.sh
             ;;
 
         11)
+            clear
+            echo "======================================"
+            echo "     Hadoop Auto Installer v2.3"
+            echo "======================================"
+            echo
+            echo "Author : Satyaprakash Gupta"
+            echo "Version: v2.3"
+            echo "Hadoop : 3.4.1"
+            echo "Java   : OpenJDK 11"
+            echo
+            echo "GitHub:"
+            echo "https://github.com/Satya481/hadoop-auto-installer"
+            ;;
+
+        12)
             echo
             echo "Thank you for using Hadoop Auto Installer."
             exit 0
@@ -86,10 +98,8 @@ do
             echo
             echo "Invalid choice."
             ;;
-
     esac
 
     echo
     read -p "Press Enter to return to the menu..."
-
 done
