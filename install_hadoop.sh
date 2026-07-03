@@ -1,23 +1,5 @@
 #!/bin/bash
 
-<<<<<<< HEAD
-HADOOP_VERSION="3.4.1"
-HADOOP_HOME="$HOME_DIR/hadoop"
-JAVA_HOME_PATH="/usr/lib/jvm/java-11-openjdk-amd64"
-HADOOP_DATA="$HOME_DIR/hadoopdata"
-DOWNLOAD_URL="https://dlcdn.apache.org/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz"
-
-source lib/config.sh
-source lib/colors.sh
-source lib/logger.sh
-source lib/progress.sh
-source lib/common.sh
-source lib/test.sh
-source lib/ssh.sh
-source lib/java.sh
-source lib/hadoop.sh
-=======
-
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$SCRIPT_DIR"
 source "$SCRIPT_DIR/lib/config.sh"
@@ -29,7 +11,6 @@ source "$SCRIPT_DIR/lib/test.sh"
 source "$SCRIPT_DIR/lib/ssh.sh"
 source "$SCRIPT_DIR/lib/java.sh"
 source "$SCRIPT_DIR/lib/hadoop.sh"
->>>>>>> 7445f8e (Improve installer portability and Hadoop environment configuration)
 # ======================================================
 # Hadoop Auto Installer v1.0
 # Author: Satyaprakash Gupta
@@ -54,31 +35,25 @@ CYAN='\033[0;36m'
 NC='\033[0m'
 
 # ----------------------------
-# Print Functions
-# ----------------------------
-
-
-
-# ----------------------------
-# Detect Current User
-# ----------------------------
-
-
-
-
-
-# ----------------------------
-# Print Functions
-# ----------------------------
-
-
-
-# ----------------------------
 # Detect Current User
 # ----------------------------
 
 CURRENT_USER=$(whoami)
 HOME_DIR=$HOME
+
+# ----------------------------
+# Hadoop Variables
+# ----------------------------
+
+HADOOP_VERSION="3.4.1"
+
+HADOOP_HOME="$HOME_DIR/hadoop"
+
+JAVA_HOME_PATH="/usr/lib/jvm/java-11-openjdk-amd64"
+
+HADOOP_DATA="$HOME_DIR/hadoopdata"
+
+DOWNLOAD_URL="https://dlcdn.apache.org/hadoop/common/hadoop-${HADOOP_VERSION}/hadoop-${HADOOP_VERSION}.tar.gz"
 
 # ----------------------------
 # Welcome
@@ -89,6 +64,8 @@ clear
 echo "==========================================="
 echo "      Hadoop Auto Installer v1.0"
 echo "==========================================="
+
+echo ""
 
 info "User : $CURRENT_USER"
 info "Home : $HOME_DIR"
@@ -107,22 +84,12 @@ check_os
 install_java
 install_ssh
 
-<<<<<<< HEAD
-=======
 # Ensure Hadoop is downloaded and extracted before configuring
->>>>>>> 7445f8e (Improve installer portability and Hadoop environment configuration)
 download_hadoop
 extract_hadoop
 
 # Ensure user's shell environment contains Hadoop/JAVA exports
 configure_bashrc
-
-configure_bashrc
-
-export JAVA_HOME=$JAVA_HOME_PATH
-export HADOOP_HOME=$HOME/hadoop
-export PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
-export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 
 configure_hadoop_env
 configure_core_site
@@ -135,5 +102,3 @@ format_namenode
 start_hadoop
 verify_cluster
 test_hadoop
-
-
