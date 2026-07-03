@@ -1,5 +1,11 @@
 # 🚀 Hadoop Auto Installer
 
+![Linux](https://img.shields.io/badge/Linux-Mint%2022.1-success)
+![Hadoop](https://img.shields.io/badge/Hadoop-3.4.1-orange)
+![Java](https://img.shields.io/badge/OpenJDK-11-blue)
+![Tested](https://img.shields.io/badge/Tested-Linux%20Mint%2022.1-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 A modular Bash-based automation toolkit for installing and configuring a **Single Node Apache Hadoop 3.4.1 Cluster** on Linux.
 
 This project automates the complete Hadoop setup process, including Java installation, SSH configuration, Hadoop configuration, HDFS formatting, cluster startup, and a built-in MapReduce WordCount test.
@@ -110,7 +116,28 @@ Run the installer:
 ```
 
 ---
+## 🧪 Tested Environment
 
+The installer has been successfully tested on a clean Linux Mint installation.
+
+- Linux Mint 22.1 Cinnamon
+- Apache Hadoop 3.4.1
+- OpenJDK 11
+- Fresh installation (no manual Java or Hadoop setup)
+
+### Successfully Verified
+
+- ✅ One-command installation
+- ✅ Automatic Java installation and configuration
+- ✅ Passwordless SSH setup
+- ✅ Hadoop download and extraction
+- ✅ HDFS configuration
+- ✅ YARN configuration
+- ✅ NameNode formatting
+- ✅ Hadoop cluster startup
+- ✅ MapReduce WordCount execution
+
+---
 # ▶️ Management Scripts
 
 Start Hadoop
@@ -186,6 +213,25 @@ http://localhost:8088
 ```
 
 ---
+## 📸 Screenshots
+
+### Installer
+
+![Installer](screenshots/installer.png)
+
+### HDFS Dashboard
+
+![HDFS](screenshots/hdfs.png)
+
+### YARN Dashboard
+
+![YARN](screenshots/yarn.png)
+
+### WordCount Result
+
+![WordCount](screenshots/wordcount.png)
+
+---
 
 # 📋 Current Features
 
@@ -202,15 +248,21 @@ http://localhost:8088
 
 ---
 
-# 🚀 Roadmap
+## 🚀 Roadmap
 
 - [x] Modular architecture
 - [x] Logging
 - [x] Progress bar
 - [x] Hadoop installation
 - [x] Hadoop configuration
-- [x] WordCount testing
-- [ ] Backup & restore improvements
+- [x] Automatic Java configuration
+- [x] SSH automation
+- [x] WordCount verification
+- [x] Backup
+- [x] Restore
+- [x] Start/Stop/Restart scripts
+- [x] Status script
+- [x] Uninstall script
 - [ ] Interactive menu
 - [ ] Multi-version Hadoop support
 - [ ] Multi-node cluster support
