@@ -1,5 +1,6 @@
 #!/bin/bash
 
+<<<<<<< HEAD
 HADOOP_VERSION="3.4.1"
 HADOOP_HOME="$HOME_DIR/hadoop"
 JAVA_HOME_PATH="/usr/lib/jvm/java-11-openjdk-amd64"
@@ -15,6 +16,20 @@ source lib/test.sh
 source lib/ssh.sh
 source lib/java.sh
 source lib/hadoop.sh
+=======
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR"
+source "$SCRIPT_DIR/lib/config.sh"
+source "$SCRIPT_DIR/lib/colors.sh"
+source "$SCRIPT_DIR/lib/logger.sh"
+source "$SCRIPT_DIR/lib/progress.sh"
+source "$SCRIPT_DIR/lib/common.sh"
+source "$SCRIPT_DIR/lib/test.sh"
+source "$SCRIPT_DIR/lib/ssh.sh"
+source "$SCRIPT_DIR/lib/java.sh"
+source "$SCRIPT_DIR/lib/hadoop.sh"
+>>>>>>> 7445f8e (Improve installer portability and Hadoop environment configuration)
 # ======================================================
 # Hadoop Auto Installer v1.0
 # Author: Satyaprakash Gupta
@@ -37,6 +52,20 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 NC='\033[0m'
+
+# ----------------------------
+# Print Functions
+# ----------------------------
+
+
+
+# ----------------------------
+# Detect Current User
+# ----------------------------
+
+
+
+
 
 # ----------------------------
 # Print Functions
@@ -78,9 +107,15 @@ check_os
 install_java
 install_ssh
 
+<<<<<<< HEAD
+=======
+# Ensure Hadoop is downloaded and extracted before configuring
+>>>>>>> 7445f8e (Improve installer portability and Hadoop environment configuration)
 download_hadoop
 extract_hadoop
 
+# Ensure user's shell environment contains Hadoop/JAVA exports
+configure_bashrc
 
 configure_bashrc
 

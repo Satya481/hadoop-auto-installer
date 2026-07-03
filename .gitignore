@@ -1,0 +1,5 @@
+logs/
+backups/
+hadoop/
+hadoopdata/
+*.tar.gz

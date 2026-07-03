@@ -32,8 +32,21 @@ configure_hadoop_env() {
 
     info "Configuring hadoop-env.sh..."
 
-    sed -i "s|^export JAVA_HOME=.*|export JAVA_HOME=$JAVA_HOME_PATH|" \
-    "$HADOOP_HOME/etc/hadoop/hadoop-env.sh"
+    TARGET="$HADOOP_HOME/etc/hadoop/hadoop-env.sh"
+
+    if [ ! -f "$TARGET" ]; then
+        log_error "hadoop-env.sh not found at $TARGET"
+        return 1
+    fi
+
+    # If an uncommented export exists, replace it. If a commented one exists, uncomment and replace.
+    if grep -qE '^[[:space:]]*export[[:space:]]+JAVA_HOME=' "$TARGET"; then
+        sed -i "s|^[[:space:]]*export[[:space:]]\+JAVA_HOME=.*|export JAVA_HOME=$JAVA_HOME_PATH|" "$TARGET"
+    elif grep -qE '^[[:space:]]*#.*JAVA_HOME' "$TARGET"; then
+        sed -i "s|^[[:space:]]*#.*JAVA_HOME.*|export JAVA_HOME=$JAVA_HOME_PATH|" "$TARGET"
+    else
+        echo "export JAVA_HOME=$JAVA_HOME_PATH" >> "$TARGET"
+    fi
 
     success "hadoop-env.sh configured"
 
