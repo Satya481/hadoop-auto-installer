@@ -1,4 +1,5 @@
 # 🚀 Hadoop Auto Installer
+One-command Apache Hadoop setup for Linux
 
 ![Linux](https://img.shields.io/badge/Linux-Mint%2022.1-success)
 ![Hadoop](https://img.shields.io/badge/Hadoop-3.4.1-orange)
@@ -216,9 +217,17 @@ http://localhost:8088
 ---
 ## 📸 Screenshots
 
+## 📷 Interactive Menu
+
+![Interactive Menu](screenshots/menu.png)
+
 ### Installer
 
 ![Installer](screenshots/install.png)
+
+## 📷 Hadoop Verification
+
+![Verification](screenshots/verify.png)
 
 ### HDFS Dashboard
 
