@@ -223,7 +223,9 @@ http://localhost:8088
 
 ### Installer
 
-![Installer](screenshots/install.png)
+![Installer](screenshots/install-1.png)
+![Installer](screenshots/install-2.png)
+![Installer](screenshots/install-3png)
 
 ## 📷 Hadoop Verification
 
@@ -273,7 +275,7 @@ http://localhost:8088
 - [x] Start/Stop/Restart scripts
 - [x] Status script
 - [x] Uninstall script
-- [ ] Interactive menu
+- [x] Interactive menu
 - [ ] Multi-version Hadoop support
 - [ ] Multi-node cluster support
 
