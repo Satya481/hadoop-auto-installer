@@ -225,7 +225,7 @@ http://localhost:8088
 
 ![Installer](screenshots/install-1.png)
 ![Installer](screenshots/install-2.png)
-![Installer](screenshots/install-3png)
+![Installer](screenshots/install-3.png)
 
 ## 📷 Hadoop Verification
 
